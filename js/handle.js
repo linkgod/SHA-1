@@ -2,6 +2,15 @@ define(function(require, exports, module){
     var $ = require('jquery'),
         SHA1Hash = require('js/sha1hash');
 
+    //利用Web Worker来进行文件读取,然后显示加密结果
+    function readFileByWorker(file){
+        var worker = new Worker('js/readerFileByWorker.js');
+        worker.postMessage(file);
+        worker.onmessage = function (evt){
+            $('#where').val(SHA1Hash(evt.data));
+        };
+    }
+
     exports.startSha1 = function (){
         var sha1Number = SHA1Hash($('#key').val());
         $('#where').val(sha1Number);
@@ -12,16 +21,10 @@ define(function(require, exports, module){
         var files = evt.originalEvent.dataTransfer.files,
             output = [],
             reader = new FileReader();
-
         evt.stopPropagation();
         evt.preventDefault();
-        output.push(files[0].name);
-        reader.readAsBinaryString(files[0]);
-        reader.onload = function(){
-            output.push(SHA1Hash(this.result));
-            $('#where').val(output[1]);
-        };
-        $('#key').val(output[0]);
+        $('#key').val(files[0].name);
+        readFileByWorker(files[0]);
         return false;
     };
 
