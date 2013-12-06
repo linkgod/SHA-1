@@ -1,4 +1,6 @@
-(function(global){
+(function(){
+    var root = this;
+
     //消息填充位，补足长度。
     function fillString(str){
         var blockAmount = ((str.length + 8) >> 6) + 1,
@@ -13,7 +15,7 @@
         }
         blocks[i >> 2] |= 0x80 << (24 - (i & 3) * 8);
         blocks[blockAmount * 16 - 1] = str.length * 8;
-        
+
         return blocks;
     }
 
@@ -27,11 +29,11 @@
             str += hexString.charAt((binArray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
                     hexString.charAt((binArray[i >> 2] >> ((3 - i % 4) * 8  )) & 0xF);
         }
-        
+
         return str;
     }
 
-    //核心函数，输出为长度为5的number数组，对应160位的消息摘要。 
+    //核心函数，输出为长度为5的number数组，对应160位的消息摘要。
     function coreFunction(blockArray){
         var w = [],
             a = 0x67452301,
@@ -54,7 +56,7 @@
             oldc = c;
             oldd = d;
             olde = e;
-            
+
             for(j = 0; j < 80; j++){  //对每个512位进行80步操作
                 if(j < 16){
                     w[j] = blockArray[i + j];
@@ -75,7 +77,7 @@
             d = modPlus(d, oldd);
             e = modPlus(e, olde);
         }
-        
+
         return [a, b, c, d, e];
     }
 
@@ -113,7 +115,22 @@
     }
 
     //主函数根据输入的消息字符串计算消息摘要，返回十六进制表示的消息摘要
-    global.sha1 = function (s){
+    function sha1(s){
         return binToHex(coreFunction(fillString(s)));
-    };
-})(this);
+    }
+
+    // support AMD and Node
+    if(typeof define === "function" && typeof define.amd){
+        define(function(){
+            return sha1;
+        });
+    }else if(typeof exports !== 'undefined') {
+        if(typeof module !== 'undefined' && module.exports) {
+          exports = module.exports = sha1;
+        }
+        exports.sha1 = sha1;
+    } else {
+        root.sha1 = sha1;
+    }
+
+}).call(this);
