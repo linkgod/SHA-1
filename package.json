@@ -4,7 +4,8 @@
   "description": "This is a SHA-1 hash generator by JavaScript.",
   "main": "sha1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compress": "uglifyjs ./sha1.js -o ./sha1.min.js -c -m"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/linkgod/SHA-1/issues"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.7.3"
   }
 }
