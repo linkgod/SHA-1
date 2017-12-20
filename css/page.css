@@ -124,7 +124,10 @@ form input:focus{
 	outline: 1px solid #555;
 	color: #FFF;
 }
-input[type="button"]{
+input[type="submit"]:focus{
+	outline: none;
+}
+input[type="submit"]{
 	color: #999;
 	width: 35%;
 	padding: 5px 10px;
@@ -133,6 +136,7 @@ input[type="button"]{
 	border: 1px solid #000;
 	font-weight: lighter;
 	-moz-border-radius: 15px;
+	outline: none;
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	background: #45484d;

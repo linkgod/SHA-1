@@ -3,7 +3,10 @@ define(function(require, exports, module){
         handle = require('js/handle');
 
     $('#SHAForm').on('dragover',handle.handleDragOver).on('drop',handle.handleFileSelect);
-	$('#sha-1').click(handle.startSha1);
-
+    $('#SHAForm').on('submit', function(){
+        handle.startSha1();
+        return false;
+    });
+    $('#sha-1').click(handle.startSha1);
     $('.rain, .border').addClass('end').removeClass('unfocus start');
 });
