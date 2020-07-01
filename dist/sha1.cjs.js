@@ -1,6 +1,10 @@
 'use strict';
 
-// For your convenience, the code comments have been translated by Google.
+/**
+ * @file This is a SHA-1 hash generator by JavaScript.
+ * @author Hsun
+ * @description For your convenience, the code comments have been translated by Google.
+ ***/
 
 // 消息填充位，补足长度。
 // Message padding bits, complement the length.
