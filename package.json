@@ -1,6 +1,6 @@
 {
   "name": "sha-1",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "description": "This is a SHA-1 hash generator by JavaScript.",
   "main": "dist/sha1.cjs.js",
   "module": "dist/sha1.esm.js",
