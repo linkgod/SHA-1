@@ -1,8 +1,4 @@
-/**
- * @file This is a SHA-1 hash generator by JavaScript.
- * @author Hsun
- * @description For your convenience, the code comments have been translated by Google.
- ***/
+// For your convenience, the code comments have been translated by Google.
 
 // 消息填充位，补足长度。
 // Message padding bits, complement the length.
@@ -134,6 +130,8 @@ function cyclicShift(num, k) {
 // 主函数根据输入的消息字符串计算消息摘要，返回十六进制表示的消息摘要
 // The main function calculates the message digest based on the input message
 // string and returns the message digest in hexadecimal.
-export default function sha1(s) {
+function sha1(s) {
   return binToHex(core(fillString(s)));
 }
+
+export default sha1;

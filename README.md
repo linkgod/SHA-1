@@ -17,11 +17,8 @@ $ npm install sha-1
 ```
 
 ```js
-$ node
-> sha1 = require('./sha1')
-{ [Function] sha1: [Circular] }
-> sha1('hello')
-'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d'
+var sha1 = require('sha-1');
+sha1('hello') // aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
 ```
 
 You can also use [bower](http://bower.io/) to install the component:
