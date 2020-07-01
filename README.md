@@ -1,8 +1,12 @@
 # SHA-1
 
-[![npm](https://img.shields.io/npm/dm/sha-1?style=flat-square)](https://npmcharts.com/compare/sha-1?minimal=true) [![npm](https://img.shields.io/npm/v/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1) ![GitHub](https://img.shields.io/github/license/linkgod/sha-1?style=flat-square)
+[![npm](https://img.shields.io/npm/dm/sha-1?style=flat-square)](https://npmcharts.com/compare/sha-1?minimal=true) [![npm](https://img.shields.io/npm/v/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1) [![NPM](https://img.shields.io/npm/l/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1)
 
 This is a SHA-1 hash generator by JavaScript.
+
+## Live Demo
+
+For a live demo, visit: [https://linkgod.github.io/SHA-1/](https://linkgod.github.io/SHA-1/)
 
 ## Get started
 
@@ -39,4 +43,4 @@ require(['./sha1'], function(sha1){
 
 ## License
 
-Licensed under MIT
+Licensed under [MIT](./LICENSE)
