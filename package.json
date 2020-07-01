@@ -22,7 +22,5 @@
   "bugs": {
     "url": "https://github.com/linkgod/SHA-1/issues"
   },
-  "devDependencies": {
-    "uglify-js": "^2.7.3"
-  }
+  "devDependencies": {}
 }
