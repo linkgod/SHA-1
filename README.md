@@ -1,11 +1,26 @@
-SHA-1
-===
+# SHA-1
+
+[![npm](https://img.shields.io/npm/dm/sha-1?style=flat-square)](https://npmcharts.com/compare/sha-1?minimal=true) [![npm](https://img.shields.io/npm/v/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1) ![GitHub](https://img.shields.io/github/license/linkgod/sha-1?style=flat-square)
 
 This is a SHA-1 hash generator by JavaScript.
 
 ## Get started
 
-You can use [bower](http://bower.io/) to install the component:
+You can use the package in Node
+
+```
+$ npm install sha-1
+```
+
+```js
+$ node
+> sha1 = require('./sha1')
+{ [Function] sha1: [Circular] }
+> sha1('hello')
+'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d'
+```
+
+You can also use [bower](http://bower.io/) to install the component:
 
 ```
 $ bower install SHA-1
@@ -20,20 +35,6 @@ If you use RequireJS
 require(['./sha1'], function(sha1){
     sha1('hello'); // aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
 });
-```
-
-You can also use the package in Node
-
-```
-$ npm install sha-1
-```
-
-```js
-$ node
-> sha1 = require('./sha1')
-{ [Function] sha1: [Circular] }
-> sha1('hello')
-'aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d'
 ```
 
 ## License
