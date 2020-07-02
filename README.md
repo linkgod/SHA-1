@@ -1,6 +1,6 @@
 # SHA-1
 
-[![npm](https://img.shields.io/npm/dm/sha-1?style=flat-square)](https://npmcharts.com/compare/sha-1?minimal=true) [![npm](https://img.shields.io/npm/v/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1) [![NPM](https://img.shields.io/npm/l/sha-1?style=flat-square)](https://www.npmjs.com/package/sha-1)
+[![npm](https://flat.badgen.net/npm/dw/sha-1)](https://npmcharts.com/compare/sha-1?minimal=true) [![npm](https://flat.badgen.net/npm/v/sha-1)](https://www.npmjs.com/package/sha-1) [![NPM](https://flat.badgen.net/github/license/linkgod/SHA-1)](https://www.npmjs.com/package/sha-1)
 
 This is a SHA-1 hash generator by JavaScript.
 
